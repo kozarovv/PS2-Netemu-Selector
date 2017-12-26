@@ -31,7 +31,7 @@ Work only on 4.81, 4.82 cobra and non cobra firmware. App is changing files on d
 
 ##Build
 
-- Same requirements like originall installer but require custom ps2_netemu.self files to be added before pkg compilation.
+- Same requirements like originall installer but require custom ps2_netemu.self files to be added, and empty.txt to be removed, before pkg compilation.
 
 ## Credits
 
