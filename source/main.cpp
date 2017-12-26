@@ -49,7 +49,7 @@ int string_array_size(string *arr)
 int restore(string appfolder, string foldername)
 {
 	string ret="";
-	string problems="\n\nPlease be adviced that, depending on what you choose, this process can change /dev_flash files so DON'T TURN OFF YOUR PS3 while the process in running.\n\nIf you have some corruption after copying the files or the installer quits unexpectly check all files before restarting and if possible reinstall the firmware from XMB or Recovery Menu.";
+	string problems="\n\nThis process change /dev_flash files so DON'T TURN OFF YOUR PS3 while the process in running.\n\nIf you have some corruption after copying the files or the installer quits unexpectly check all files before restarting and if possible reinstall the firmware from XMB or Recovery Menu.";
 	
 	Mess.Dialog(MSG_YESNO_DYES,("Are you sure you want to restore '"+foldername+"' backup?"+problems).c_str());
 	if (Mess.GetResponse(MSG_DIALOG_BTN_YES)==1)
@@ -60,9 +60,8 @@ int restore(string appfolder, string foldername)
 			if (is_dev_blind_mounted()==0)
 			{
 				unmount_dev_blind();
-				Mess.Dialog(MSG_YESNO_DYES, ("Backup '"+foldername+"' has restored with success.\nYou have changed /dev_flash files, do you want to reboot?").c_str());
-				if (Mess.GetResponse(MSG_DIALOG_BTN_YES)==1) return 2;
-				else return 1;
+				Mess.Dialog(MSG_OK, ("Backup '"+foldername+"' has restored with success.\nYou have changed Playstation 2 emulator /dev_flash files.").c_str());
+				return 1;
 			}
 			Mess.Dialog(MSG_OK,("Backup '"+foldername+"' has restored with success.\nPress OK to continue.").c_str());
 			return 1;
@@ -79,10 +78,10 @@ int restore(string appfolder, string foldername)
 int install(string appfolder, string firmware_folder, string app_choice)
 {
 	string ret="";
-	string problems="\n\nPlease be adviced that, depending on what you choose, this process can change dev_flash files so DON'T TURN OFF YOUR PS3 while the process in running.\n\nIf you have some corruption after copying the files or the installer quits unexpectly check all files before restarting and if possible reinstall the firmware from XMB or Recovery Menu.";
-	string foldername=currentDateTime()+" Before "+app_choice;
+	string problems="\n\nThis process change dev_flash files so DON'T TURN OFF YOUR PS3 while the process in running.\n\nIf you have some corruption after copying the files or the installer quits unexpectly check all files before restarting and if possible reinstall the firmware from XMB or Recovery Menu.";
+	string foldername=currentDateTime()+" Files ";
 
-	Mess.Dialog(MSG_YESNO_DNO,("Are you sure you want to install '"+app_choice+"'?"+problems).c_str());
+	Mess.Dialog(MSG_YESNO_DNO,("Are you sure you want to change emulator?"+problems).c_str());
 	if (Mess.GetResponse(MSG_DIALOG_BTN_YES)==1)
 	{
 		ret=copy_prepare(appfolder, "backup", foldername, firmware_folder, app_choice);
@@ -94,9 +93,8 @@ int install(string appfolder, string firmware_folder, string app_choice)
 				if (is_dev_blind_mounted()==0)
 				{
 					unmount_dev_blind();
-					Mess.Dialog(MSG_YESNO_DYES, ("'"+app_choice+"' has installed with success.\nYou have changed /dev_flash files, do you want to reboot?").c_str());
-					if (Mess.GetResponse(MSG_DIALOG_BTN_YES)==1) return 2;
-					else return 1;
+					Mess.Dialog(MSG_OK, ("Emulator has changed with success.\nYou have changed Playstation 2 emulator /dev_flash files."));
+					return 1;
 				}
 				Mess.Dialog(MSG_OK,("'"+app_choice+"' has installed with success.\nPress OK to continue.").c_str());
 				return 1;
@@ -218,7 +216,7 @@ int make_menu_to_array(string appfolder, int whatmenu, string vers, string type)
 		{
 			menu1[iapp]="Backups";
 			iapp++;
-			menu1[iapp]="Exit to XMB";
+			menu1[iapp]="Back to XMB";
 			iapp++;
 			menu1[iapp]="\0";
 		}
@@ -280,7 +278,7 @@ void bitmap_menu(int menu_id, int msize, int selected, int choosed, int menu1_po
 
 	if (menu_id==1)
 	{
-		F1.PrintfToBitmap(center_text_x(sizeTitleFont, "MAIN MENU"),tposy,&Menu_Layer, 0xd38900, sizeTitleFont, "MAIN MENU");
+		F1.PrintfToBitmap(center_text_x(sizeTitleFont, "PS2NETEMU SELECTOR"),tposy,&Menu_Layer, 0xff0000, sizeTitleFont, "PS2 NETEMU SELECTOR");
 		//dynamic menu
 		for(j=start_at;j<=end_at;j++)
 		{
@@ -296,7 +294,7 @@ void bitmap_menu(int menu_id, int msize, int selected, int choosed, int menu1_po
 
 			IBCross.AlphaDrawIMGtoBitmap(xpos(90),ypos(610),&png_button_cross,&Menu_Layer);
 			if (string_array_size(menu2[menu1_pos])>2) F2.PrintfToBitmap(xpos(90)+png_button_cross.width+xpos(10),ypos(610)+sizeFont-ypos(5),&Menu_Layer, COLOR_WHITE, sizeFont, "Select");
-			else F2.PrintfToBitmap(xpos(90)+png_button_cross.width+xpos(10),ypos(610)+sizeFont-ypos(5),&Menu_Layer, COLOR_WHITE, sizeFont, "Install");
+			else F2.PrintfToBitmap(xpos(90)+png_button_cross.width+xpos(10),ypos(610)+sizeFont-ypos(5),&Menu_Layer, COLOR_WHITE, sizeFont, "Change Emulator");
 			IBSquare.AlphaDrawIMGtoBitmap(xpos(90),ypos(650),&png_button_square,&Menu_Layer);
 			F2.PrintfToBitmap(xpos(90)+png_button_square.width+xpos(10),ypos(650)+sizeFont-ypos(5),&Menu_Layer, COLOR_WHITE, sizeFont, "Delete");
 		}
@@ -308,7 +306,7 @@ void bitmap_menu(int menu_id, int msize, int selected, int choosed, int menu1_po
 	}
 	else if (menu_id==2)
 	{
-		F1.PrintfToBitmap(center_text_x(sizeTitleFont, "CHOOSE A FIRMWARE"),tposy,&Menu_Layer, 0xd38900, sizeTitleFont, "CHOOSE A FIRMWARE");
+		F1.PrintfToBitmap(center_text_x(sizeTitleFont, "CHOOSE EMULATOR VERSION"),tposy,&Menu_Layer, 0xff0000, sizeTitleFont, "CHOOSE EMULATOR VERSION");
 		//dynamic menu
 		for(j=start_at;j<=end_at;j++)
 		{
@@ -319,7 +317,7 @@ void bitmap_menu(int menu_id, int msize, int selected, int choosed, int menu1_po
 		F2.PrintfToBitmap(center_text_x(sizeFont, menu2[menu1_pos][msize-1].c_str()),ypos(550),&Menu_Layer,menu_text_color(msize-1, selected, choosed,-1,-1),sizeFont, "%s",menu2[menu1_pos][msize-1].c_str());
 		//buttons
 		IBCross.AlphaDrawIMGtoBitmap(xpos(90),ypos(610),&png_button_cross,&Menu_Layer);
-		if (selected<msize-1) F2.PrintfToBitmap(xpos(90)+png_button_cross.width+xpos(10),ypos(610)+sizeFont-ypos(5),&Menu_Layer, COLOR_WHITE, sizeFont, "Install");
+		if (selected<msize-1) F2.PrintfToBitmap(xpos(90)+png_button_cross.width+xpos(10),ypos(610)+sizeFont-ypos(5),&Menu_Layer, COLOR_WHITE, sizeFont, "Change emulator");
 		else F2.PrintfToBitmap(xpos(90)+png_button_cross.width+xpos(10),ypos(610)+sizeFont-ypos(5),&Menu_Layer, COLOR_WHITE, sizeFont, "Select");
 		IBCircle.AlphaDrawIMGtoBitmap(xpos(90),ypos(650),&png_button_circle,&Menu_Layer);
 		F2.PrintfToBitmap(xpos(90)+png_button_circle.width+xpos(10),ypos(650)+sizeFont-ypos(5),&Menu_Layer, COLOR_WHITE, sizeFont, "Back");

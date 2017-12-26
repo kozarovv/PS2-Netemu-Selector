@@ -1,53 +1,41 @@
-XMB Manager Plus Installer
+PS2 Netemu Selector
 ==========================
 
-XMB Manager Plus (XMBM+) Installer is the source code for the EBOOT.BIN of XMB Manager Plus
+Application for changing ps2_netemu file versions on firmware 4.81, 4.82 (CEX, DEX, DECR (decr untested)). 
+Based on modified version of XMB Manager Plus (XMBM+) Installer. 
+Probably never gonna be updated. For original installer readme check file "READMEinstaller.markdown" 
+
+##Usage
+
+Install pkg file. Open application, and follow onscreen instuctions.
+
+##Available versions
+
+- Default - Clean emulator without additional features. Only standard cobra patches are applied.
+- Temperatures Mod - Custom emulator version patched by 3141card to show temperatures of CELL/RSX while playing PS2 games. Additionally patched by me to fix temps display on every display mode, and set to refresh temp every 2 seconds.
+- Memory Dumper Mod - Custom emulator version patched by 3141card to allow LV1 memory dump while playing PS2 games. Additionally this emu can use all HV calls, and have debug menu unlocked without need to use combo.
+- HDD Browser Mod - Not really sure what is usage of this emu :D Looks like it allow you to select game image without need of cobra. 
+
+Work only on 4.81, 4.82 cobra and non cobra firmware. App is changing files on dev_flash!
+
+##Changes from Installer to Selector
+
+- Obviously renamed project
+- Removed reboot prompt for devflash operations (not needed for netemu change) 
+- Fixed string centering in menus (ugly hack)
+- Graphical changes (strings, colors, target names, etc.)
+- Changed usleep values for buttons 
+- Changed way of naming backups folder. Previous method resulted here in GO TO EMULATOR SELECTOR in name.
+- Removed some refers to variable names in dialogs. Specially app_choice ones.
+- More that I forgot, anyway source is here 
+
+##Build
+
+- Same requirements like originall installer but require custom ps2_netemu.self files to be added before pkg compilation.
 
 ## Credits
 
-### XMBM+
+- andreus, and XMBM+ Team for great installer
+- 3141card for r.e. and patches to ps2_netemu
 
--  aldostools (coding, SFX/SFO editor/converter)
--  andreus (coding, translator)
--  Berion (graphical design)
--  bitsbubba (coding, themes)
--  CloneD (themes, tester, videos)
--  DeViL303 (coding, POC/WIP)
--  dragoangel (translator, themes)
--  ps3Hen (coding, 4.00 port, translator)
--  XiorgON (tester, translator, coding)
--  xlsound (images)
--  wawryn (translator)
-
-### XMBM+ Builder Toolkit
-
--  GUI: XiorgON
--  Batch coding: andreus, ps3hen, XiorgON
--  SFX/SFO editor/converter: aldostools
--  Graphical design: Berion
-
-### XMBM+ Installer
-
--  Coding: andreus
-
-### Special thanks
-
-- rebug team for the package manager installer
-- sandungas for the ps3devwiki and all is help
-- deroad for the PSXBrew, NoRSX and all is help
-- all xmbm+ toolkit tools developers
-- all the testers and bug reporters
-- and of course the users
-
-## Source/Development
-
-As a team we believe in open collaboration which means sharing everything so everyone can understand if they want to.
-
-The Development Page, this is where we discuss/plan for the XMBM+. If you have any ideas/suggestions send them there.
-
-The entire source in available for download in the git
-
--  Development page: http://www.ps3crunch.net/forum/threads/2431
--  Git: https://github.com/XMB-Manager-Plus/xmb-manager-plus
--  Git (Builder Toolkit): https://github.com/XMB-Manager-Plus/xmb-manager-plus-builder-toolkit
--  Git (Installer): https://github.com/XMB-Manager-Plus/xmb-manager-plus-installer
+Visit Git (Installer): https://github.com/XMB-Manager-Plus/xmb-manager-plus-installer

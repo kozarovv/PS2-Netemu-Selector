@@ -22,8 +22,8 @@ DATA		:=	data
 INCLUDES	:=	include
 PKGFILES	:=	$(CURDIR)/release
 
-TITLE		:=	XMB Manager Plus v1.00
-APPID		:=	XMBMANPLS
+TITLE		:=	PS2 Netemu Selector
+APPID		:=	PS2NETEMU
 CONTENTID	:=	UP0001-$(APPID)_00-0000000000000000
 ICON0		:=	$(CURDIR)/release/ICON0.PNG
 

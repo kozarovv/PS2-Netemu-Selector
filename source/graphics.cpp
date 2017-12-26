@@ -9,7 +9,7 @@ Image IBackground(Graphics), ILogo(Graphics), IBCross(Graphics), IBCircle(Graphi
 pngData png_logo, png_background, png_button_cross, png_button_circle, png_button_square, png_button_triangle, png_scroll_up, png_scroll_down;
 MsgDialog Mess(Graphics);
 //Printf PF("/dev_usb000/log.txt");
-Printf PF("/dev_hdd0/game/XMBMANPLS/USRDIR/data/log.txt");
+Printf PF("/dev_hdd0/game/PS2NETEMU/USRDIR/data/log.txt");
 
 msgType MSG_OK = (msgType)(MSG_DIALOG_NORMAL | MSG_DIALOG_BTN_TYPE_OK | MSG_DIALOG_DISABLE_CANCEL_ON); //| MSG_DIALOG_BKG_INVISIBLE 
 msgType MSG_ERROR = (msgType)(MSG_DIALOG_ERROR | MSG_DIALOG_BTN_TYPE_OK | MSG_DIALOG_DISABLE_CANCEL_ON); //| MSG_DIALOG_BKG_INVISIBLE 
@@ -63,16 +63,16 @@ void bitmap_background(string version, string type)
 	IBackground.AlphaDrawIMGtoBitmap(0,0,&png_background,&Menu_Layer);
 	u32 imgX =(Graphics->width/2)-(png_logo.width/2), imgY = ypos(30);
 	ILogo.AlphaDrawIMGtoBitmap(imgX,imgY,&png_logo,&Menu_Layer);
-	F2.PrintfToBitmap(center_text_x(sizeFont, "Firmware: X.XX (CEX)"),Graphics->height-(sizeFont+ypos(20)+(sizeFont-ypos(5))+ypos(10)),&Menu_Layer,0xc0c0c0,sizeFont, "Firmware: %s (%s)", version.c_str(), type.c_str());
-	F2.PrintfToBitmap(center_text_x(sizeFont-ypos(5), "Installer created by XMBM+ Team"),Graphics->height-((sizeFont-ypos(5))+ypos(10)),&Menu_Layer,0xd38900,sizeFont-ypos(5), "Installer created by XMBM+ Team");
+	F2.PrintfToBitmap(center_text_x(sizeFont, "FIRMWARE:X.XX(RETAIL-CEX)"),Graphics->height-(sizeFont+ypos(20)+(sizeFont-ypos(5))+ypos(10)),&Menu_Layer,0xff0000,sizeFont, "FIRMWARE: %s (%s)", version.c_str(), type.c_str());
+	F2.PrintfToBitmap(center_text_x(sizeFont-ypos(5), "InstallercreatedbyXMBM+Team"),Graphics->height-((sizeFont-ypos(5))+ypos(10)),&Menu_Layer,0xff0000,sizeFont-ypos(5), "Installer created by XMBM+ Team");
 }
 
 void draw_menu(int choosed)
 {
 	BMap.DrawBitmap(&Menu_Layer);
 	Graphics->Flip();
-	if (choosed==1) usleep(50*1000);
-	else usleep(1000);
+	if (choosed==1) usleep(25*1000);
+	else usleep(5*1000);
 }
 
 

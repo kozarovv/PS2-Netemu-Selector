@@ -89,9 +89,9 @@ string get_firmware_info(string what)
 	{
 		uint64_t targettype;
 		lv2_get_target_type(&targettype);
-		if (targettype==1) result="CEX";
-		else if (targettype==2) result="DEX";
-		else if (targettype==3) result="DECR";
+		if (targettype==1) result="RETAIL - CEX";
+		else if (targettype==2) result="DEBUG - DEX";
+		else if (targettype==3) result="DEVKIT - DECR";
 		else result="Unknown";
 	}
 

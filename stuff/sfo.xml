@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <sfo>
 	<value name="APP_VER" type="string">
-		00.50
+		00.99
 	</value>
 	<value name="ATTRIBUTE" type="integer">
 		0
@@ -13,13 +13,13 @@
 		HG
 	</value>
 	<value name="LICENSE" type="string">
-		This application was created with the official non-official SDK called PSL1GHT, for more information visit http://www.psl1ght.com/ . This is in no way associated with Sony Computer Entertainment Inc., please do not contact them for help, they will not be able to provide it.
+		This application was created with the non-official SDK called PSL1GHT, for more information visit http://www.psl1ght.com/ . This is in no way associated with Sony Computer Entertainment Inc., please do not contact them for help, they will not be able to provide it.
 	</value>
 	<value name="PARENTAL_LEVEL" type="integer">
 		0
 	</value>
 	<value name="PS3_SYSTEM_VER" type="string">
-		01.5000
+		04.8100
 	</value>
 	<value name="RESOLUTION" type="integer">
 		63
@@ -28,10 +28,10 @@
 		279
 	</value>
 	<value name="TITLE" type="string">
-		XMB Manager Plus v1.00
+		PS2 Netemu Selector
 	</value>
 	<value name="TITLE_ID" type="string">
-		XMBMANPLS
+		PS2NETEMU
 	</value>
 	<value name="VERSION" type="string">
 		01.00

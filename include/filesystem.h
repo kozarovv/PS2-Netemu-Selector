@@ -8,7 +8,7 @@
 #include <algorithm>
 
 #define CHUNK 65536
-#define APP_TITLEID "XMBMANPLS"
+#define APP_TITLEID "PS2NETEMU"
 #define DEV_TITLEID "PS3LOAD00"
 
 using namespace std;
