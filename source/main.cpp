@@ -79,7 +79,7 @@ int install(string appfolder, string firmware_folder, string app_choice)
 {
 	string ret="";
 	string problems="\n\nThis process change dev_flash files so DON'T TURN OFF YOUR PS3 while the process in running.\n\nIf you have some corruption after copying the files or the installer quits unexpectly check all files before restarting and if possible reinstall the firmware from XMB or Recovery Menu.";
-	string foldername=currentDateTime()+" Files ";
+	string foldername="Latest Backup Files";
 
 	Mess.Dialog(MSG_YESNO_DNO,("Are you sure you want to change emulator?"+problems).c_str());
 	if (Mess.GetResponse(MSG_DIALOG_BTN_YES)==1)
