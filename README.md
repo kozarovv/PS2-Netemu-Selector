@@ -28,6 +28,7 @@ Work only on 4.81, 4.82 cobra and non cobra firmware. App is changing files on d
 - Changed way of naming backups folder. Previous method resulted here in GO TO EMULATOR SELECTOR in name.
 - Removed some refers to variable names in dialogs. Specially app_choice ones.
 - More that I forgot, anyway source is here 
+- In v1.1 Only backup of last used emu is created. Old backup is overwritten with new.
 
 ## Build
 
