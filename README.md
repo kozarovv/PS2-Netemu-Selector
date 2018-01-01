@@ -29,14 +29,18 @@ Work only on 4.81, 4.82 cobra and non cobra firmware. App is changing files on d
 - Removed some refers to variable names in dialogs. Specially app_choice ones.
 - More that I forgot, anyway source is here 
 - In v1.1 Only backup of last used emu is created. Old backup is overwritten with new.
+- Since v1.2 require noRSX 0.29
+- Added scetool flags to makefile
 
 ## Build
 
-- Same requirements like originall installer but require custom ps2_netemu.self files to be added, and empty.txt to be removed, before pkg compilation.
+- Install NoRSX library in version 0.29 (no earlier, no later): https://github.com/wargio/NoRSX/tree/a0d1d0c6c47561df70813fcf86df610d982ffbfc
+- Other requirements are the same like in original installer code (PSl1GHT, etc.). But require custom ps2_netemu.self files to be added, and empty.txt to be removed, before pkg compilation.
 
 ## Credits
 
 - andreus, and XMBM+ Team for great installer
 - 3141card for r.e. and patches to ps2_netemu
+- deroad for noRSX
 
 Visit Git (Installer): https://github.com/XMB-Manager-Plus/xmb-manager-plus-installer
