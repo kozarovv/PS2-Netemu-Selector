@@ -4,7 +4,7 @@ NoRSX *Graphics = new NoRSX();
 Background B1(Graphics);
 Bitmap BMap(Graphics);
 NoRSX_Bitmap Menu_Layer;
-Font F1(LATIN2, Graphics), F2(LATIN2, Graphics);
+Font F1("/dev_flash/data/font/SCE-PS3-RD-B-LATIN2.TTF", Graphics), F2(LATIN2, Graphics);
 Image IBackground(Graphics), ILogo(Graphics), IBCross(Graphics), IBCircle(Graphics), IBSquare(Graphics), IBTriangle(Graphics), ISDown(Graphics), ISUp(Graphics);
 pngData png_logo, png_background, png_button_cross, png_button_circle, png_button_square, png_button_triangle, png_scroll_up, png_scroll_down;
 MsgDialog Mess(Graphics);

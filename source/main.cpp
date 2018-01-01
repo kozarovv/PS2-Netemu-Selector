@@ -278,7 +278,7 @@ void bitmap_menu(int menu_id, int msize, int selected, int choosed, int menu1_po
 
 	if (menu_id==1)
 	{
-		F1.PrintfToBitmap(center_text_x(sizeTitleFont, "PS2NETEMU SELECTOR"),tposy,&Menu_Layer, 0xff0000, sizeTitleFont, "PS2 NETEMU SELECTOR");
+		F1.PrintfToBitmap(center_text_x(sizeTitleFont, "PS2NETEMU_________SELECTOR"),tposy,&Menu_Layer, 0xff0000, sizeTitleFont, "PS2 NETEMU SELECTOR");
 		//dynamic menu
 		for(j=start_at;j<=end_at;j++)
 		{
@@ -306,7 +306,7 @@ void bitmap_menu(int menu_id, int msize, int selected, int choosed, int menu1_po
 	}
 	else if (menu_id==2)
 	{
-		F1.PrintfToBitmap(center_text_x(sizeTitleFont, "CHOOSE EMULATOR VERSION"),tposy,&Menu_Layer, 0xff0000, sizeTitleFont, "CHOOSE EMULATOR VERSION");
+		F1.PrintfToBitmap(center_text_x(sizeTitleFont, "CHOOSE________EMULATOR VERSION"),tposy,&Menu_Layer, 0xff0000, sizeTitleFont, "CHOOSE EMULATOR VERSION");
 		//dynamic menu
 		for(j=start_at;j<=end_at;j++)
 		{
@@ -324,7 +324,7 @@ void bitmap_menu(int menu_id, int msize, int selected, int choosed, int menu1_po
 	}
 	else if (menu_id==3)
 	{
-		F1.PrintfToBitmap(center_text_x(sizeTitleFont, "BACKUPS"),tposy,&Menu_Layer, 0xd38900, sizeTitleFont, "BACKUPS");
+		F1.PrintfToBitmap(center_text_x(sizeTitleFont, "___BACKUPS"),tposy,&Menu_Layer, 0xd38900, sizeTitleFont, "BACKUPS");
 		//dynamic menu
 		for(j=start_at;j<=end_at;j++)
 		{
