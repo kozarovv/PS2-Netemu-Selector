@@ -79,7 +79,7 @@ int install(string appfolder, string firmware_folder, string app_choice)
 {
 	string ret="";
 	string problems="\n\nThis process change dev_flash files so DON'T TURN OFF YOUR PS3 while the process in running.\n\nIf you have some corruption after copying the files or the installer quits unexpectly check all files before restarting and if possible reinstall the firmware from XMB or Recovery Menu.";
-	string foldername="Latest Backup Files";
+	string foldername="Restore Last Backup";
 
 	Mess.Dialog(MSG_YESNO_DNO,("Are you sure you want to change emulator?"+problems).c_str());
 	if (Mess.GetResponse(MSG_DIALOG_BTN_YES)==1)
@@ -324,7 +324,7 @@ void bitmap_menu(int menu_id, int msize, int selected, int choosed, int menu1_po
 	}
 	else if (menu_id==3)
 	{
-		F1.PrintfToBitmap(center_text_x(sizeTitleFont, "___BACKUPS"),tposy,&Menu_Layer, 0xd38900, sizeTitleFont, "BACKUPS");
+		F1.PrintfToBitmap(center_text_x(sizeTitleFont, "___BACKUPS"),tposy,&Menu_Layer, 0xff0000, sizeTitleFont, "BACKUPS");
 		//dynamic menu
 		for(j=start_at;j<=end_at;j++)
 		{
