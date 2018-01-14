@@ -3,7 +3,7 @@ PS2 Netemu Selector
 
 Application for changing ps2_netemu file versions on firmware 4.81, 4.82 (CEX, DEX, DECR (decr untested)). 
 Based on modified version of **XMB Manager Plus (XMBM+) Installer.**
-Probably never gonna be updated. For original installer readme check file "READMEinstaller.markdown" 
+For original installer readme check file "READMEinstaller.markdown" 
 
 ## Usage
 
