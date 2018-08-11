@@ -1,7 +1,7 @@
 PS2 Netemu Selector
 ==========================
 
-Application for changing ps2_netemu file versions on firmware 4.81, 4.82 (CEX, DEX, DECR (decr untested)). 
+Application for changing ps2_netemu file versions on firmware 4.82 (CEX, DEX, DECR (decr untested)). 
 Based on modified version of **XMB Manager Plus (XMBM+) Installer.**
 For original installer readme check file "READMEinstaller.markdown" 
 
@@ -16,7 +16,7 @@ Install pkg file. Open application, and follow onscreen instuctions.
 - Memory Dumper Mod - Custom emulator version patched by 3141card to allow LV1 memory dump while playing PS2 games. Additionally this emu can use all HV calls, and have debug menu unlocked without need to use combo.
 - HDD Browser Mod - Not really sure what is usage of this emu :D Looks like it allow you to select game image without need of cobra. 
 
-Work only on 4.81, 4.82 cobra and non cobra firmware. App is changing files on dev_flash!
+Work only on 4.82 cobra and non cobra firmware. App is changing files on dev_flash!
 
 ## Changes from Installer to Selector
 
